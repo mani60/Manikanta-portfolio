@@ -13,17 +13,20 @@ ul{
 hr {
     width: 100%;
 }
+section{
+    position: relative;
+    min-height: 100vh;
+}
 
 /* <=================================== nav-bar styling ====================================> */
 .navbar{
     width: 100%;
     position: fixed;
+    z-index: 1;
     top: 0;
-    height: 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px 5%;
+    height: 60px;
+    padding-left: 4rem;
+    padding-top: 15px;
     background: hsla(0, 0%, 9%, 0.7);
     box-shadow: 0 2px 4px 0 rgba(0,0,0,.4);
 }
@@ -39,8 +42,11 @@ hr {
     color: #FF1847;
 }
 .elements{
-    display: flex;
-    align-items: center;
+    display: inline;
+    margin-left: 8rem;
+}
+.elements li{
+    display: inline;
 }
 .elements li a{
     margin: 0px 30px;
@@ -50,10 +56,10 @@ hr {
     text-decoration: none;
     transition: all ease 0.3s;
 }
-.socials{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.navbar .socials{
+    position: relative;
+    display: inline;
+    left: 8rem;
 }
 .socials a{
     font-size: 22px;
@@ -81,27 +87,27 @@ hr {
 #main{
     background-image: url(../images/Background1.png);
     background-size:cover; 
-    display: flex;
-    flex-direction: column;
+    width: 100%;
     height: 100vh;
 }
+.main-container{
+    position: relative;
+}
 .main-content{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 60px auto;
+    position: absolute;
+    display: inline-block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,13%);
     max-width: 800px;
     text-align: center;
 }
 .main-img{
-    margin-top: 20px;
     height: 300px;
     width: 300px;
     object-fit: cover;
-    object-position: center;
     border-radius: 50%;
-    margin-bottom: 10px;
+    margin-bottom: 6px;
 }
 .designation{
     color: #c4cbea;
@@ -114,6 +120,7 @@ hr {
     font-size: 1.6rem
 }
 .main-content strong{
+    display: block;
     color: #e0d7d8;
     font-weight: 700;
     font-size: 1.6rem;
@@ -129,29 +136,29 @@ hr {
     color: #ffffff;
 }
 .main-content a{
+    display: inline-block;
     margin-top: 13px;
     text-decoration: none;
     width: 180px;
+    padding-top: 12px;
     height: 45px;
     border-radius: 15px;
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-evenly;
-    align-items: center;
     background-color: #FF1847;
     color: #ffffff;
     font-size: 0.9rem;
     font-weight: 500;
 }
+.main-content a i{
+    padding-left: 15px;
+}
 /* <=================================== about-me styling ====================================> */
 #about-me{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     background-color: #F5F5F5;
 }
 .description{
-    margin: 70px auto;
+    top: 70px;
+    left: 120.5px;
+    position: absolute;
     max-width: 1200px;
 }
 #about-me strong{
@@ -162,7 +169,7 @@ hr {
 }
 .about-text{
     max-width: 90%;
-    margin-left: auto;
+    margin-left: 475px;
 }
 .about-text h3{
     font-size: 3rem;
@@ -180,35 +187,32 @@ hr {
 }
 .secondary-image{
     height: 500px;
-    width: 500px;
+    width: 424px;
     margin-top: 30px;
     margin-right: 50px;
-}
-.container{
-    display: flex;
-    flex-direction: row;
+    float: left;
 }
 .about-text a{
+    display: inline-block;
+    margin-top: 13px;
     text-decoration: none;
     width: 180px;
+    text-align: center;
+    padding-top: 12px;
     height: 45px;
     border-radius: 15px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
     background-color: #FF1847;
     color: #ffffff;
     font-size: 0.9rem;
     font-weight: 500;
 }
+.about-text a i{
+    padding-left: 15px;
+}
 /* <=================================== Portfolio styling ====================================> */
 .portfolio{
     background-color: #3b3233;
     background-size:cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
     min-height: auto;
     padding: 40px 50px 50px;
 }
@@ -217,76 +221,66 @@ hr {
     font-size: 30px;
     letter-spacing: 8px;
     color: #8d94b4;
-    text-align: left;
+    text-align: center;
     margin-bottom: 3rem;
+    display: block;
 }
-.portfolio .education-row{
-    display: flex;
-    gap: 3rem;
+.education{
+    display: inline-block;
+    width: 31.1%;
+    text-align: left;
 }
-.education-column .title{
+.experience{
+    display: inline-block;
+    width: 60.5%;
+    position: absolute;
+    margin-left: 48px;
+}
+.portfolio-column .title{
     font-size: 1.6rem;
     font-weight: 700;
     color: #c2b9b9bb;
     margin: 0 0 1.5rem 2rem;
 }
-.education-column .education-box{
+.portfolio-column .portfolio-box{
     border-left: 0.2rem solid #FF1847;
 }
-.education-box .education-content{
+.portfolio-box .portfolio-content{
     padding-left: 2rem;
 }
-.eduaction-images{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-}
-.eduaction-images img{
+.portfolio-images img{
     height: 200px;
     width: 300px;
+    margin: 0px 60px;
 }
-.education-content .content{
+.portfolio-content .content{
     padding: 1rem;
     border: 0.2rem solid #FF1847;
     border-radius: 0.6rem;
     margin-bottom: 2rem;
 }
-.education-content .content .year{
+.portfolio-content .content .year{
     font-size: 1.2rem;
     color: #FF1847;
     padding-bottom: 0.5rem;
 }
-.education-content .content i{
+.portfolio-content .content i{
     padding-right: 0.5rem;
 }
-.education-content .content h3{
+.portfolio-content .content h3{
     font-size: 1.3rem;
     font-weight: 600;
     color: rgb(211, 178, 142);
 }
-.education-content .content p{
+.portfolio-content .content p{
     font-size: 0.9rem;
     padding-top: 0.5rem;
     color: #F5F5F5;
 }
-.education-content .content .company, .education-content .content p i, .education-content .content .cgpa{
+.portfolio-content .content .company, .portfolio-content .content p i, .portfolio-content .content .cgpa{
     color: rgb(53, 168, 129);
     font-weight: bolder;
 }
-
-.experience-sub-title {
-    color: rgb(85, 85, 85);
-    font-weight: 600;
-    font-size: 1.75rem;
-    margin-bottom: 2rem;
-  }
-  
-  .experience-details-container {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-  }
   
 /* <=================================== Skills styling ====================================> */
   #skills{
@@ -294,7 +288,6 @@ hr {
 }
   .skills-heading{
     padding-top: 2rem;
-    margin-bottom: 3rem;
     text-transform: uppercase;
     font-size: 30px;
     letter-spacing: 8px;
@@ -302,42 +295,80 @@ hr {
     color: #8d94b4;
   }
   .skills-container{
-    display: flex;
-    flex-direction: row;
-    gap: 3rem;
-    padding: 20px 40px;
+    padding: 20px;
   }
-  .skills-column{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    gap: 3rem;
+  .skills-container table{
+    border-spacing: 3rem;
   }
   .skills-container strong{
     color: #FF1847;
   }
   .skill-box{
-    display: flex;
+    height: 300px;
     padding: 1rem;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1.5rem;
+    text-align: center;
     border-radius: 0.6rem;
     border: 2px solid #FF1847;
   }
+  .skill-box p{
+    text-align: left;
+  }
+  .skill-name h3{
+    padding-bottom: 10px;
+  }
   .icon{
-    display: flex;
-    justify-content: space-around;
     font-size: 5rem;
     font-weight: 600;
     padding-bottom: 20px;
     gap: 1rem;
   }
+   /* <=================================== projects styling ====================================> */
+ #projects{
+    background-color: #F5F5F5;
+ }
+ .project-contents{
+    padding: 70px 100px;
+ }
+ .project-info img{
+    width: 300px;
+    height: 300px;
+    float: left;
+    padding-bottom: 20px;
+ }
+ .project-container table tr td{
+    padding-right: 10px;
+ }
+ .project-info{
+    text-align: center;
+    gap: 1.5rem;
+    border-radius: 0.6rem;
+    border: 2px solid #FF1847;
+    padding: 2rem;
+ }
+ .project-info p{
+    text-align: left;
+    padding-top: 20px;
+ }
+ .project-info a{
+    display: inline-block;
+    margin-top: 25px;
+    text-decoration: none;
+    width: 180px;
+    text-align: center;
+    padding-top: 12px;
+    height: 45px;
+    border-radius: 15px;
+    background-color: #FF1847;
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 500;
+ }
+ .project-info a i{
+    padding-left: 10px;
+ }
   /* <=================================== Contact styling ====================================> */
   #contact{
     background-color: #272727;
-    padding: 70px 60px;
   }
   .contact-heading{
     padding-bottom: 2rem;
@@ -348,85 +379,48 @@ hr {
     color: #8d94b4;
  }
   .contact-container{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    padding: 70px 60px;
+    position: absolute;
  }
-  .contact-container img{
+  .contact-details img{
     height: 500px;
-    width: 500px;
+    width: 333px;
     margin-top: 30px;
     margin-right: 50px;
+    position: absolute;
+    float: left;
+    top: 100px;
  }
  .contact-info{
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-    align-items: center;
+    max-width: 1200px;
+    margin-top: 150px;
+    margin-left: 400px;
  }
  .email-button{
+    display: inline-block;
+    margin-top: 13px;
     text-decoration: none;
     width: 250px;
+    text-align: center;
+    padding-top: 12px;
     height: 45px;
     border-radius: 15px;
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: center;
-    align-items: center;
     background-color: #FF1847;
     color: #ffffff;
     font-size: 0.9rem;
     font-weight: 500;
+    margin: 40px 335px;
  }
- .contact-info a i{
+ .email-button i{
     padding-left: 10px;
  }
  .contact-info p{
     color: #e0d7d8
  }
- /* <=================================== projects styling ====================================> */
- #projects{
-    background-color: #F5F5F5;
+ .contact-info .socials{
+    display: block;
+    margin-left: 375px;
  }
- .proj{
-    padding: 70px 100px;
- }
- .project-info img{
-    width: 300px;
-    height: 300px;
- }
- .project-container{
-    display: flex;
-    flex-direction: row;
-    gap: 5rem;
- }
- .project-info{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-    border-radius: 0.6rem;
-    border: 2px solid #FF1847;
-    padding: 2rem;
- }
- .project-info a{
-    text-decoration: none;
-    width: 150px;
-    height: 45px;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: center;
-    align-items: center;
-    background-color: #FF1847;
-    color: #ffffff;
-    font-size: 0.9rem;
-    font-weight: 500;
- }
- .project-info a i{
-    padding-left: 10px;
- }
-
  /* <=================================== footer styling ====================================> */
  .portfolio-footer {
     background-color: #100f0f;
