@@ -96,9 +96,8 @@ section{
 .main-content{
     position: absolute;
     display: inline-block;
-    top: 50%;
     left: 50%;
-    transform: translate(-50%,13%);
+    transform: translate(-50%,20%);
     max-width: 800px;
     text-align: center;
 }
